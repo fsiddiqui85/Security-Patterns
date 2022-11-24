@@ -3,13 +3,13 @@
 
 **Pattern Name:** Data Authentication
 
-**Context:** Within the safety-critical systems, a data message is required to pass through a communication channel as shown in Figure 3. While in transit, there is a risk that an attacker can adversely modify the contents of data message originated from a legitimate source by exploiting known/unknown system hardware/software vulnerabilities and malicious software as shown in Figure3. Thus, compromising both integrity and authenticity of a data message. This unauthorizedly modified data message can be used to launch a wide range of malicious attacks such as loading and execution of malicious code, unauthorized access to resources, denial-of-service, the elevation of privileges etc. to gain control of the system and adversely alter the behaviour of the system.
+**Context:** Within the safety-critical systems, a data message is required to pass through a communication channel as shown in Figure. While in transit, there is a risk that an attacker can adversely modify the contents of data message originated from a legitimate source by exploiting known/unknown system hardware/software vulnerabilities and malicious software as shown in Figure. Thus, compromising both integrity and authenticity of a data message. This unauthorizedly modified data message can be used to launch a wide range of malicious attacks such as loading and execution of malicious code, unauthorized access to resources, denial-of-service, the elevation of privileges etc. to gain control of the system and adversely alter the behaviour of the system.
 
 **Problem:** How to ensure authenticity and protect integrity of critical system data-at-rest and data-in-motion against unauthorized modification?
 
 **Solution:** The data and message contents shall be cryptographically hashed and signed by the sender to detect unauthorized modification of critical system data message and verify the source of data message by the recipients.
 
-![Data Authentication Security Pattern](Authentication.png)
+![Data Authentication Security Pattern](/images/Authentication.png)
 
 ## Pattern Implementations
     
