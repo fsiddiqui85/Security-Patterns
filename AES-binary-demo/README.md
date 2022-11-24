@@ -9,7 +9,7 @@
 
 **Solution:** The data and message contents shall be encrypted ensuring that only intended recipients can access the critical system control and data.
 
-![Data Confidentiality Security Pattern](Confidentiality.png)
+![Data Confidentiality Security Pattern](/images/Confidentiality.png)
 
 ## Pattern Implementations
 Within the scope of XANDAR, the data confidentiality shall be maintained while:
@@ -28,18 +28,6 @@ Within the scope of XANDAR, the data confidentiality shall be maintained while:
 
 ## Data-at-rest (AES-256 Encryption)
 
-### Code Encryption
-**Folder Name:** AES-code-demo
-
-**Source file:** aes-256-cbc-source.sh
-
-**Parameters:** source-file.c encrypted-source.c decrypted-source.c
-
-**Usage**
-```
-./aes-256-cbc-source.sh sample.c sample-enc.c sample-dec.c
-```
-
 ### Binary Encryption
 **Folder Name:** AES-binary-demo
 
@@ -51,38 +39,3 @@ Within the scope of XANDAR, the data confidentiality shall be maintained while:
 ```
 ./aes-256-cbc-binary.sh sample.c sample-enc sample-dec
 ```
-
-## Data-at-motion (TLS Socket)
-**Folder Name:** TLS-socket-demo
-
-**Source files:** server.py, client.oy
-
-**Usage**
-
-1. Generate a customised PKCS#10 digital certificate of the server using the OpenSSL certificate generation utility ‘req’ command . This includes the generation of public/private key-pair. The generated digital certificate will be used by the clients to establish secure (TLS) connection with the server.
-```
-openssl req -new 
--x509 
--days 365 
--nodes -out cert.pem -keyout key.pem 
--subj"
-/C=UK
-/ST=Northern Ireland
-/L=Belfast
-/O=QUB
-/OU=CSIT
-/CN=xandar-project.eu
-/emailAddress=f.siddiqui@qub.ac.uk"
-```
-
-2.	Open a terminal and start the TLS server process by executing the following command:
-```
-python3 server-secure.py
-```
-
-3.	Open additional terminal and start the TLS client process by executing the following command:
-```
-python3 client-secure.py
-```
-
-**Note:** If the example is intended to run on the same host machine use ip = '127.0.0.1' (loopback) and same port number in both “client.py” and “server.py”
